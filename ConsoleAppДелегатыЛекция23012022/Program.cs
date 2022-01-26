@@ -38,8 +38,11 @@ namespace ConsoleAppДелегатыЛекция23012022
             double b = Convert.ToDouble(Console.ReadLine());
 
             // вызов всех методов
-            operations.GetInvocationList();// вернет массив методов
-
+            //operations.GetInvocationList();// вернет массив методов
+            foreach(CalculatorDel operation in operations.GetInvocationList())
+            {
+                Console.WriteLine($"Результат операции:{operation(a, b)}");
+            }
         }
         static void Main(string[] args)
         {
